@@ -102,7 +102,7 @@ async function geojsonFetch() {
                     'circle-opacity': 0.6
                 }
             },
-            'waterway-label' // make the thematic layer above the waterway-label layer.
+            'waterway-label' 
         );
 
 
@@ -124,10 +124,10 @@ async function geojsonFetch() {
         // enumerate the number of covid.
         numcovid = cases[100] + cases[1000] + cases[10000] + cases[50000] + cases[100000];
 
-        // update the content of the element earthquake-count.
+        // update the content of the element covid-count.
         document.getElementById("covid-count").innerHTML = numcovid;
 
-        // add "cases" to the beginning of the x variable - the cases, and "#" to the beginning of the y variable - the number of earthquake of similar cases.
+        
         x = Object.keys(cases);
         x.unshift("cases")
         y = Object.values(cases);
@@ -152,9 +152,6 @@ async function geojsonFetch() {
                 onclick: function (d) { // update the map and sidebar once the bar is clicked.
                     let floor = parseInt(x[1 + d["x"]]),
                         ceiling = floor + 1;
-                    // combine two filters, the first is ['>=', 'cases', floor], the second is ['<', 'cases', ceiling]
-                    // the first indicates all the covid with cases greater than floor, the second indicates
-                    // all the covid with cases smaller than the ceiling.
                     map.setFilter('covid-point',
                         ['all',
                             ['>=', 'cases', floor],
@@ -172,7 +169,7 @@ async function geojsonFetch() {
             legend: {
                 show: false
             },
-            bindto: "#covid-chart" //bind the chart to the place holder element "earthquake-chart".
+            bindto: "#covid-chart" //bind the chart to the place holder element "covid-chart".
         });
 
     });
