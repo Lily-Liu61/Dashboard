@@ -110,7 +110,7 @@ async function geojsonFetch() {
         map.on('click', 'covid-point', (event) => {
             new mapboxgl.Popup()
                 .setLngLat(event.features[0].geometry.coordinates)
-                .setHTML(`<strong>Cases:</strong> ${event.features[0].properties.cases}`)
+                .setHTML(`<strong>County:</strong> ${event.features[0].properties.county}<br><strong>Cases:</strong> ${event.features[0].properties.cases}`)
                 .addTo(map);
         });
 
