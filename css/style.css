@@ -56,14 +56,14 @@ body {
   margin-bottom: 0px;
 }
 
-#earthquake-count {
+#covid-count {
   margin:0;
   text-align: center;
   color: orange;
   font-size: 50px;
 }
 
-#earthquake-chart {
+#covid-chart {
   top: 20px;
 }
 
